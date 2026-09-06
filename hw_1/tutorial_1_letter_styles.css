@@ -1,0 +1,217 @@
+/* =====================================================
+   TUTORIAL 2: CSS DETECTIVE CHALLENGE
+   =====================================================
+   
+   Add the correct CSS classes to your HTML 
+   letter so it matches this styling specification.
+   
+   Look at each selector below and figure out what HTML
+   elements need which classes to make this work
+ 
+   ===================================================== */
+
+/* DOCUMENT FOUNDATION */
+.letter-document {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fefefe;
+}
+
+/* LETTER HEADER STYLING */
+.letter-header {
+    border-bottom: 3px solid #2c5aa0;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+.sender-info {
+    text-align: right;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.letter-date {
+    text-align: right;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.recipient-info {
+    background-color: #e9ecef;
+    padding: 1rem;
+    border-left: 4px solid #2c5aa0;
+    margin-bottom: 1.5rem;
+}
+
+/* MAIN CONTENT STYLING */
+.letter-subject {
+    color: #2c5aa0;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.letter-greeting {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #495057;
+}
+
+.letter-paragraph {
+    margin: 1.5rem 0;
+}
+
+/* SECTION STYLING */
+.content-section {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #dee2e6;
+}
+
+.section-heading {
+    color: #2c5aa0;
+    background-color: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5aa0;
+    margin-bottom: 1rem;
+}
+
+/* LIST STYLING */
+.priority-list {
+    background-color: #fff3cd;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #ffc107;
+}
+
+.priority-list li {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.semester-dates {
+    background-color: #d1ecf1;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #17a2b8;
+}
+
+.semester-dates li {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* DEFINITION LIST STYLING */
+.dance-definitions {
+    background-color: #f8d7da;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #dc3545;
+}
+
+.dance-term {
+    font-weight: bold;
+    color: #721c24;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.dance-definition {
+    margin-left: 1rem;
+    padding: 0.75rem;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* LETTER CLOSING */
+.letter-closing {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #dee2e6;
+}
+
+.closing-phrase {
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.signature {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c5aa0;
+    margin-bottom: 2rem;
+}
+
+.university-motto {
+    background-color: #e2e3e5;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-style: italic;
+    border: 2px dashed #6c757d;
+}
+
+/* LINK STYLING */
+.letter-link {
+    color: #2c5aa0;
+    text-decoration: none;
+    border-bottom: 1px dotted #2c5aa0;
+}
+
+.letter-link:focus {
+    outline: 2px solid #ffc107;
+    outline-offset: 2px;
+}
+
+/* EMPHASIS AND FORMATTING */
+.abbreviation {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+.subscript, .superscript {
+    font-size: 0.8em;
+}
+
+.emphasis {
+    background-color: #fff3cd;
+    padding: 0.1rem 0.2rem;
+    border-radius: 2px;
+}
+
+.citation {
+    font-style: italic;
+    color: #666;
+}
+
+.inline-quote {
+    font-style: italic;
+    color: #2c5aa0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+    .letter-document {
+        padding: 1rem;
+    }
+    
+    .sender-info,
+    .recipient-info {
+        padding: 0.75rem;
+    }
+    
+    .letter-subject {
+        font-size: 1.3rem;
+    }
+}
