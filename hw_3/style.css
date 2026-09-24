@@ -1,0 +1,84 @@
+/* INTENTIONALLY UGLY STARTER STYLES */
+/* These styles are very, very ugly. */
+/* Time to make them attractive, legible, and usable */
+
+body {
+    font-family: Times, serif;
+    background-color: #ff00ff;
+    margin: 0;
+    padding: 0;
+}
+
+.recipe-container {
+    background-color: yellow;
+    border: 10px solid red;
+    margin: 10px;
+    padding: 5px;
+}
+
+.recipe-header {
+    background-color: lime;
+    border: 3px dotted blue;
+    text-align: center;
+}
+
+.recipe-title {
+    color: red;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.recipe-meta {
+    background-color: orange;
+    border: 2px dashed purple;
+}
+
+.recipe-description {
+    background-color: aqua;
+    font-size: 8px;
+    color: purple;
+}
+
+.ingredients-section {
+    background-color: pink;
+    border: 5px solid brown;
+}
+
+.ingredients-list {
+    list-style: none;
+}
+
+.ingredients-list li {
+    background-color: white;
+    border: 1px solid black;
+    margin: 2px;
+    padding: 1px;
+}
+
+.instructions-section {
+    background-color: lightgray;
+    border: 3px solid navy;
+}
+
+.instruction-step {
+    background-color: beige;
+    border: 2px solid maroon;
+    margin: 3px;
+}
+
+.recipe-footer {
+    background-color: violet;
+    text-align: right;
+    font-size: 6px;
+}
+
+.recipe-image {
+    width: 50px;
+    height: 50px;
+    border: 5px solid black;
+}
+
+* {
+    margin: 2px;
+    padding: 1px;
+}
