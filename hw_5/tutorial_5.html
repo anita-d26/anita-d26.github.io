@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial 5: Array Methods for Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tutorial 5: Array Methods for Data</h1>
+            <p>From working with ONE element to working with MANY elements</p>
+        </header>
+
+        <!-- Method 1: forEach - Do something to each item -->
+        <section class="method-section">
+            <h2>Method 1: forEach - Display Each Restaurant</h2>
+            <p>Use <code>forEach</code> to display each restaurant in the list. Like Tutorial 4, but for ALL items.</p>
+            
+            <div class="demo-area">
+                <button id="display-button" class="method-button">Display All Restaurants</button>
+                <div id="restaurant-list" class="result-area">
+                    <p class="placeholder">Click button to display all restaurants</p>
+                </div>
+            </div>
+            
+            <div class="explanation">
+                <p><strong>What's happening:</strong> <code>forEach</code> runs a function once for each restaurant in the array, letting you display or process every item.</p>
+            </div>
+        </section>
+
+        <!-- Method 2: filter - Show only items that match criteria -->
+        <section class="method-section">
+            <h2>Method 2: filter - Show Only Cheap Restaurants</h2>
+            <p>Use <code>filter</code> to show only restaurants with "$" or "$$" price range. Perfect for category views!</p>
+            
+            <div class="demo-area">
+                <button id="filter-button" class="method-button">Show Cheap Restaurants</button>
+                <div id="filtered-list" class="result-area">
+                    <p class="placeholder">Click button to show only affordable restaurants</p>
+                </div>
+            </div>
+            
+            <div class="explanation">
+                <p><strong>What's happening:</strong> <code>filter</code> creates a new array with only restaurants that meet your criteria (price is "$" or "$$").</p>
+            </div>
+        </section>
+
+        <!-- Method 3: map - Transform data to get specific information -->
+        <section class="method-section">
+            <h2>Method 3: map - Get Just Restaurant Names</h2>
+            <p>Use <code>map</code> to extract just the names from all restaurants. Great for creating simple lists!</p>
+            
+            <div class="demo-area">
+                <button id="map-button" class="method-button">Show Restaurant Names</button>
+                <div id="mapped-list" class="result-area">
+                    <p class="placeholder">Click button to show just the restaurant names</p>
+                </div>
+            </div>
+            
+            <div class="explanation">
+                <p><strong>What's happening:</strong> <code>map</code> transforms each restaurant into just its name, creating a new array of names.</p>
+            </div>
+        </section>
+
+        <!-- Method 4: find - Get one specific item -->
+        <section class="method-section">
+            <h2>Method 4: find - Find Highest Rated Restaurant</h2>
+            <p>Use <code>find</code> to locate the restaurant with the highest rating. Perfect for finding specific items!</p>
+            
+            <div class="demo-area">
+                <button id="find-button" class="method-button">Find Best Restaurant</button>
+                <div id="found-item" class="result-area">
+                    <p class="placeholder">Click button to find the highest rated restaurant</p>
+                </div>
+            </div>
+            
+            <div class="explanation">
+                <p><strong>What's happening:</strong> <code>find</code> returns the first restaurant that meets your criteria (highest rating).</p>
+            </div>
+        </section>
+
+        <!-- Tutorial Instructions -->
+        <section class="tutorial-instructions">
+            <h2>Your Tasks</h2>
+            <ol>
+                <li><strong>forEach:</strong> Display all restaurant names and cuisines in the list area</li>
+                <li><strong>filter:</strong> Show only restaurants with "$" or "$$" price ranges</li>
+                <li><strong>map:</strong> Create a simple list of just restaurant names</li>
+                <li><strong>find:</strong> Find and display the restaurant with rating 4.8</li>
+            </ol>
+            
+            <h3>Array Methods to Practice:</h3>
+            <ul>
+                <li><code>restaurants.forEach(function(restaurant) { })</code> - do something with each item</li>
+                <li><code>restaurants.filter(function(restaurant) { return condition; })</code> - get items that match</li>
+                <li><code>restaurants.map(function(restaurant) { return restaurant.name; })</code> - transform each item</li>
+                <li><code>restaurants.find(function(restaurant) { return condition; })</code> - get first matching item</li>
+            </ul>
+            
+            <h3>Why These Methods Are Better Than Loops:</h3>
+            <ul>
+                <li><strong>Clearer intent:</strong> <code>filter</code> says "I want some items" vs a loop that could do anything</li>
+                <li><strong>Less error-prone:</strong> No need to manage index variables or array bounds</li>
+                <li><strong>Chainable:</strong> You can combine them: <code>restaurants.filter().map()</code></li>
+                <li><strong>Functional style:</strong> Each method returns a new array, keeping data immutable</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
