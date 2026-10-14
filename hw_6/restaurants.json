@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "name": "Milano's Italian Restaurant",
+        "cuisine": "Italian",
+        "rating": 4.5,
+        "priceRange": "$$",
+        "neighborhood": "College Park",
+        "hours": "11am-10pm",
+        "specialties": [
+            "pasta",
+            "pizza"
+        ],
+        "phoneNumber": "(301) 555-0123"
+    },
+    {
+        "id": 2,
+        "name": "Sakura Sushi",
+        "cuisine": "Japanese",
+        "rating": 4.2,
+        "priceRange": "$$$",
+        "neighborhood": "Downtown",
+        "hours": "5pm-11pm",
+        "specialties": [
+            "sushi",
+            "ramen"
+        ],
+        "phoneNumber": "(301) 555-0456"
+    },
+    {
+        "id": 3,
+        "name": "Border Café",
+        "cuisine": "Mexican",
+        "rating": 4.0,
+        "priceRange": "$",
+        "neighborhood": "University District",
+        "hours": "10am-12am",
+        "specialties": [
+            "tacos",
+            "burritos"
+        ],
+        "phoneNumber": "(301) 555-0789"
+    },
+    {
+        "id": 4,
+        "name": "The Brass Elephant",
+        "cuisine": "American",
+        "rating": 4.8,
+        "priceRange": "$$$$",
+        "neighborhood": "Historic District",
+        "hours": "5pm-10pm",
+        "specialties": [
+            "steaks",
+            "seafood"
+        ],
+        "phoneNumber": "(301) 555-0012"
+    },
+    {
+        "id": 5,
+        "name": "Pho Corner",
+        "cuisine": "Vietnamese",
+        "rating": 4.3,
+        "priceRange": "$",
+        "neighborhood": "College Park",
+        "hours": "11am-9pm",
+        "specialties": [
+            "pho",
+            "banh mi"
+        ],
+        "phoneNumber": "(301) 555-0345"
+    },
+    {
+        "id": 6,
+        "name": "Tandoor Palace",
+        "cuisine": "Indian",
+        "rating": 4.1,
+        "priceRange": "$$",
+        "neighborhood": "Downtown",
+        "hours": "12pm-10pm",
+        "specialties": [
+            "curry",
+            "naan"
+        ],
+        "phoneNumber": "(301) 555-0678"
+    },
+    {
+        "id": 7,
+        "name": "Le Petit Bistro",
+        "cuisine": "French",
+        "rating": 4.6,
+        "priceRange": "$$$",
+        "neighborhood": "Historic District",
+        "hours": "6pm-10pm",
+        "specialties": [
+            "wine",
+            "cheese"
+        ],
+        "phoneNumber": "(301) 555-0901"
+    },
+    {
+        "id": 8,
+        "name": "Seoul Kitchen",
+        "cuisine": "Korean",
+        "rating": 4.4,
+        "priceRange": "$$",
+        "neighborhood": "University District",
+        "hours": "11am-11pm",
+        "specialties": [
+            "bbq",
+            "kimchi"
+        ],
+        "phoneNumber": "(301) 555-0234"
+    }
+]
