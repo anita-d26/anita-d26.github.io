@@ -327,7 +327,7 @@ h2 {
     }
 }
 
-/* Wide: details become a sidebar above a sticky ingredient list */
+/* Wide: details become a sidebar */
 @media (min-width: 75rem) {
 
     body {
@@ -348,10 +348,7 @@ h2 {
         padding: var(--space-5);
     }
 
-    /* Ingredients stay in view while scrolling through the steps */
     .ingredients-section {
-        position: sticky;
-        top: var(--space-2);
         align-self: start;
     }
 }
