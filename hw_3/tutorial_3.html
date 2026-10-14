@@ -7,43 +7,59 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"></head>
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
     <main class="recipe">
-        <div class="recipe-container">
-            <!-- Recipe Header Section -->
-            <header class="recipe-header">
-                <img src="images/classic-chocolate-chip-cookies.jpg" 
-                    alt="Golden brown chocolate chip cookies on a cooling rack" 
+        <article class="recipe-container">
+
+            <!-- Hero Image -->
+            <figure class="recipe-image-container">
+                <img src="images/classic-chocolate-chip-cookies.jpg"
+                    alt="Golden brown chocolate chip cookies on a cooling rack"
                     class="recipe-image">
+                <figcaption class="image-caption">Freshly baked classic chocolate chip cookies</figcaption>
+            </figure>
+
+            <!-- Recipe Header -->
+            <header class="recipe-header">
                 <h1 class="recipe-title">Classic Chocolate Chip Cookies</h1>
-                <!-- Recipe Description -->
-                <p class="recipe-description">These classic chocolate chip cookies are crispy on the edges, chewy in the middle, and packed with chocolate chips. Perfect for any occasion, from lunch boxes to holiday gatherings. This foolproof recipe has been tested countless times and always delivers delicious results.</p>
             </header>
 
-            <!-- Recipe Meta Information -->
-            <section class="recipe-meta" aria-label="Recipe Details">
-                <div class="meta-item">
-                    <strong>Prep Time:</strong> 15 minutes
-                </div>
-                <div class="meta-item">
-                    <strong>Cook Time:</strong> 12 minutes
-                </div>
-                <div class="meta-item">
-                    <strong>Total Time:</strong> 27 minutes
-                </div>
-                <div class="meta-item">
-                    <strong>Servings:</strong> 24 cookies
-                </div>
-                <div class="meta-item">
-                    <strong>Difficulty:</strong> Easy
-                </div>
+            <!-- Recipe Description -->
+            <p class="recipe-description">These classic chocolate chip cookies are crispy on the edges, chewy in the middle, and packed with chocolate chips. 
+                Perfect for any occasion, from lunch boxes to holiday gatherings. This foolproof recipe has been tested countless times and always delivers delicious results.</p>
+
+            <!-- Recipe Details -->
+            <section class="recipe-meta" aria-label="Recipe details">
+                <dl class="meta-list">
+                    <div class="meta-item">
+                        <dt>Prep Time</dt>
+                        <dd>15 minutes</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>Cook Time</dt>
+                        <dd>12 minutes</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>Total Time</dt>
+                        <dd>27 minutes</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>Servings</dt>
+                        <dd>24 cookies</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>Difficulty</dt>
+                        <dd>Easy</dd>
+                    </div>
+                </dl>
             </section>
 
-            <!-- Ingredients Section -->
-            <section class="ingredients-section">
-                <h2>Ingredients</h2>
+            <!-- Ingredients -->
+            <section class="ingredients-section" aria-labelledby="ingredients-heading">
+                <h2 id="ingredients-heading">Ingredients</h2>
                 <ul class="ingredients-list" role="list">
                     <li><label><input type="checkbox"> <span class="ingredient-amount">2¼ cups</span> <span>all-purpose flour</span></label></li>
                     <li><label><input type="checkbox"> <span class="ingredient-amount">1 teaspoon</span> <span>baking soda</span></label></li>
@@ -58,9 +74,9 @@
                 </ul>
             </section>
 
-            <!-- Instructions Section -->
-            <section class="instructions-section">
-                <h2>Instructions</h2>
+            <!-- Instructions -->
+            <section class="instructions-section" aria-labelledby="instructions-heading">
+                <h2 id="instructions-heading">Instructions</h2>
                 <ol class="instructions-list" role="list">
                     <li class="instruction-step">
                         <p><strong>Preheat oven</strong> to 375°F (190°C). Line baking sheets with parchment paper.</p>
@@ -69,7 +85,7 @@
                         <p><strong>Mix dry ingredients:</strong> In a medium bowl, whisk together flour, baking soda, and salt. Set aside.</p>
                     </li>
                     <li class="instruction-step">
-                        <p><strong>Cream butter and sugars:</strong> In a large bowl, beat softened butter with both sugars until light and fluffy, about 2-3 minutes.</p>  
+                        <p><strong>Cream butter and sugars:</strong> In a large bowl, beat softened butter with both sugars until light and fluffy, about 2-3 minutes.</p>
                     </li>
                     <li class="instruction-step">
                         <p><strong>Add eggs and vanilla:</strong> Beat in eggs one at a time, then stir in vanilla extract.</p>
@@ -89,12 +105,13 @@
                 </ol>
             </section>
 
-            <!-- Recipe Footer -->
+            <!-- Footer -->
             <footer class="recipe-footer">
                 <p>Recipe adapted from traditional family cookbook | Nutritional info: ~150 calories per cookie</p>
                 <p>Tags: dessert, baking, cookies, chocolate, family-friendly</p>
             </footer>
-        </div>
-        </main>
-    </body>
+
+        </article>
+    </main>
+</body>
 </html>

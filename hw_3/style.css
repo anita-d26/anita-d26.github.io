@@ -1,110 +1,153 @@
 /* style.css */
 
-/* ================== Design Variables ====================*/
+/* ================== Design Variables ==================== */
 :root {
     /* Color Variables */
-    --color-ink: #5c2a12;           /* h1, body text */
-    --color-accent: #93542d;        /* h2, step numbers */
-    --color-surface: #F8E5CE;       /* recipe container */
-    --color-background: #ecc390;    /* background, meta */
+    --color-ink: #5c2a12;           /* title, body text */
+    --color-accent: #80401f;        /* section headings, step numbers, checked items */
+    --color-surface: #f8e5ce;       /* recipe card */
+    --color-background: #ecc390;    /* page background, meta tiles, footer */
+    --color-on-accent: #ffffff;     /* text on accent fills */
 
     /* Typography Variables */
-    --font-display: 'Dancing Script', cursive;      /* Header fonts */
-    --font-body: 'Open Sans', Arial, sans-serif;    /* Body fonts */
+    --font-display: 'Dancing Script', cursive;      /* recipe title only */
+    --font-body: 'Open Sans', Arial, sans-serif;    /* everything else */
+    --font-size-small: 0.875rem;
+    --font-size-step: 1.125rem;
 
     /* Spacing Variables */
-    --space-1:0.5rem;
-    --space-2:1rem;
-    --space-3:1.5rem;
-    --space-4:2rem;
-    --space-5:2.5rem;
+    --space-0: 0.25rem;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 2.5rem;
 
     /* Shape Variables */
     --radius: 0.75rem;
     --shadow: 0 0.75rem 2rem rgba(92, 42, 18, 0.15);
-    --border-soft: 1px solid rgba(147, 84, 45, 0.35);
-    --rule: 1px solid rgba(92, 42, 18, 0.2); 
+    --border-dotted: 3px dotted var(--color-accent);
+    --rule: 1px solid rgba(92, 42, 18, 0.2);
+
+    /* Sizing Variables */
+    --touch-target: 2.75rem;        /* 44px minimum tap area */
+    --step-marker: 2.25rem;
+    --checkbox-size: 1.25rem;
+    --amount-width: 6.5rem;         /* lines up ingredient names in a column */
+    --ingredients-min: 17rem;       /* keeps ingredient names readable in two columns */
+    --reading-width: 65ch;          /* comfortable line length for paragraphs */
+    --page-max-width: 75rem;
 }
 
 
-/* ================== Base Styles ====================*/
+/* ================== Base Styles ==================== */
 
-/* Global Styles */
 * {
     box-sizing: border-box;
 }
 
+/* Chocolate-chip dot pattern behind the card */
 body {
-    font-family: var(--font-body);
-    background-color: var(--color-background);
     margin: 0;
-    padding: 0;
+    padding: var(--space-2);
+    font-family: var(--font-body);
     color: var(--color-ink);
     line-height: 1.6;
+    background-color: var(--color-background);
+    background-image: radial-gradient(var(--color-ink) 0.2rem, transparent 0.25rem);
+    background-size: 3rem 3rem;
 }
 
 h1,
 h2,
-p {
-    margin: 0;}
+p,
+figure,
+dl,
+dd {
+    margin: 0;
+}
 
-
+/* Section headings */
 h2 {
+    margin-bottom: var(--space-2);
+    font-family: var(--font-body);
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     color: var(--color-accent);
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    
 }
 
 
-/* ================== Page Layout ====================*/
+/* ================== Page Layout ==================== */
 
-/* Recipe Container */
+/* Mobile first: everything in one column */
 .recipe-container {
-    background-color: var(--color-surface);
-    margin: var(--space-2);
-    padding: var(--space-1);
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
+        "hero"
         "header"
+        "description"
         "meta"
         "ingredients"
         "instructions"
-        "footer"
+        "footer";
+    gap: var(--space-2);
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: var(--space-2);
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
 
-/* ================== Component Styles ====================*/
+/* ================== Component Styles ==================== */
 
-/* Header */
+/* Hero Image */
+.recipe-image-container {
+    grid-area: hero;
+}
+
 .recipe-image {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
+    border-radius: var(--radius);
 }
 
+.image-caption {
+    padding-top: var(--space-1);
+    font-size: var(--font-size-small);
+    font-style: italic;
+    text-align: center;
+}
+
+
+/* Header */
 .recipe-header {
     grid-area: header;
-    background-color: var(--color-surface);
-    border: 3px dotted var(--color-accent);
+    padding: var(--space-2);
+    border: var(--border-dotted);
     text-align: center;
 }
 
 .recipe-title {
-    color: var(--color-ink);
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 7vw, 4.5rem);
+    line-height: 1.2;
+    color: var(--color-ink);
 }
 
+
+/* Description */
 .recipe-description {
-    background-color: var(--color-surface);
+    grid-area: description;
+    justify-self: center;
+    max-width: var(--reading-width);
+    padding-inline: var(--space-2);
     font-size: clamp(1rem, 3vw, 1.25rem);
-    color: var(--color-ink);
-    padding: var(--space-2) var(--space-3);
     text-align: center;
 }
 
@@ -112,71 +155,103 @@ h2 {
 /* Meta */
 .recipe-meta {
     grid-area: meta;
+}
+
+.meta-list {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-1);
 }
 
 .meta-item {
+    display: flex;
     flex: 1 1 8rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: var(--space-1);
     border-radius: var(--radius);
     background-color: var(--color-background);
     text-align: center;
 }
 
-/* Ingredients Section */
+.meta-item dt {
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.meta-item dd {
+    font-size: var(--font-size-step);
+}
+
+
+/* Ingredients */
 .ingredients-section {
     grid-area: ingredients;
-    padding: var(--space-3);
-    background-color: var(--color-surface);
-    border: 3px dotted var(--color-accent);
+    padding: var(--space-2);
+    border: var(--border-dotted);
 }
 
 .ingredients-list {
-    list-style: none;
+    margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 .ingredients-list li {
     display: flex;
-    gap: var(--space-1) ;
-    padding-block:var(--space-1);
-    border-bottom: 1px solid var(--color-accent);
+    border-bottom: var(--rule);
 }
 
 .ingredients-list label {
     display: flex;
+    flex: 1;
     align-items: center;
     gap: var(--space-1);
+    min-height: var(--touch-target);
+    padding-block: var(--space-1);
+    cursor: pointer;
 }
 
 .ingredients-list input {
     flex: 0 0 auto;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
     margin: 0;
     accent-color: var(--color-accent);
 }
 
+.ingredients-list input:focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 2px;
+}
+
 .ingredient-amount {
-    flex: 0 0 auto;
+    flex: 0 0 var(--amount-width);
     font-weight: 700;
 }
 
+/* Checked items shift to the accent color and get crossed out */
+.ingredients-list label:has(input:checked) {
+    color: var(--color-accent);
+    text-decoration: line-through;
+}
 
-/* Instructions Section */
+
+/* Instructions */
 .instructions-section {
     grid-area: instructions;
-    padding: var(--space-3);
-    background-color: var(--color-surface);
-    border: 3px dotted var(--color-accent);
+    padding: var(--space-2);
+    border: var(--border-dotted);
 }
 
 .instructions-list {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
+    margin: 0;
     padding: 0;
     list-style: none;
     counter-reset: step;
@@ -184,61 +259,99 @@ h2 {
 
 .instruction-step {
     display: flex;
-    gap: var(--space-2);
     align-items: flex-start;
+    gap: var(--space-2);
     counter-increment: step;
 }
 
 .instruction-step::before {
     content: counter(step);
     display: grid;
-    flex: 0 0 2.25rem;
-    height: 2.25rem;
+    flex: 0 0 var(--step-marker);
+    height: var(--step-marker);
     place-items: center;
     border-radius: 50%;
-    color: white;
-    background: var(--color-accent);
     font-weight: 700;
+    color: var(--color-on-accent);
+    background-color: var(--color-accent);
 }
 
 .instruction-step p {
-    margin: 0;
-    padding-top: 0.25rem;
+    padding-top: var(--space-0);
+    font-size: var(--font-size-step);
     line-height: 1.6;
 }
 
 
-/* Recipe Footer */
+/* Footer */
 .recipe-footer {
     grid-area: footer;
-    background-color: var(--color-background);
-    text-align: right;
-    font-size: 0.875rem;
     padding: var(--space-2);
+    border-radius: var(--radius);
+    font-size: var(--font-size-small);
+    text-align: right;
+    background-color: var(--color-background);
 }
 
 
-/* ================== Media Queries ====================*/
+/* ================== Media Queries ==================== */
 
+/* Tablet: ingredients and steps side by side, wider column for steps */
 @media (min-width: 48rem) {
+
+    body {
+        padding: var(--space-3);
+    }
+
+    .recipe-container {
+        grid-template-columns: minmax(var(--ingredients-min), 2fr) minmax(0, 3fr);
+        grid-template-areas:
+            "hero hero"
+            "header header"
+            "description description"
+            "meta meta"
+            "ingredients instructions"
+            "footer footer";
+        gap: var(--space-4);
+        padding: var(--space-4);
+    }
+
+    .recipe-image {
+        aspect-ratio: 21 / 9;
+        object-fit: cover;
+    }
+
+    .ingredients-section,
+    .instructions-section {
+        padding: var(--space-3);
+    }
+}
+
+/* Wide: details become a sidebar above a sticky ingredient list */
+@media (min-width: 75rem) {
 
     body {
         padding: var(--space-4);
     }
 
     .recipe-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        grid-template-rows: auto auto auto auto 1fr auto;
         grid-template-areas:
+            "hero hero"
             "header header"
-            "meta meta"
+            "description description"
+            "meta instructions"
             "ingredients instructions"
             "footer footer";
         gap: var(--space-5);
         padding: var(--space-5);
     }
 
-    .recipe-image {
-        aspect-ratio: 21 / 9;
-        object-fit: cover;
+    /* Ingredients stay in view while scrolling through the steps */
+    .ingredients-section {
+        position: sticky;
+        top: var(--space-2);
+        align-self: start;
     }
 }
